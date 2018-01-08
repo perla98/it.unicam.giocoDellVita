@@ -1,7 +1,10 @@
 package it.unicam.giocoDellVita.Class;
 
+import java.util.Random;
+
 public class Board {
 	
+	private static Random _random = new Random();
 	private Cell[][] _grid;
     private int _height=3; //bottom right pos: grid[height-1][width-1]
     private int _width=3;
@@ -25,7 +28,7 @@ public class Board {
 	        for (int h=0; h<_grid.length; h++){
 	            for (int w=0; w<_grid[h].length; w++){
 	                _grid[h][w] = new Cell();
-	                if (Math.random()<=p){
+	                if (_random.nextDouble() <= p){
 	                    _grid[h][w].setNewState(true);
 	                    _grid[h][w].updateState();
 	                }
@@ -122,6 +125,8 @@ public class Board {
 	    /**
 	     * Updates Cell state based on newState
 	     */
+	    
+	    
 	    private void commit() {
 	        for (int h=0; h<_grid.length; h++)
 	            for (int w=0; w<_grid[h].length; w++)
