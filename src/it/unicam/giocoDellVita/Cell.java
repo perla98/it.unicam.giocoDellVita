@@ -2,26 +2,26 @@ package it.unicam.giocoDellVita;
 
 public class Cell {
 
-	private boolean state = false;
-    private boolean newState;
+	private boolean _state = false;
+    private boolean _newState;
 
     public Cell() {
 
     }
 
     public Cell(boolean state) {
-        this.state = state;
+        this._state = state;
     }
 
     public void setNewState(boolean state) {
-        newState = state;
+        _newState = state;
     }
 
     public void updateState() {
-        state = newState;
+        _state = _newState;
     }
 
     public boolean getState() {
-        return state;
+        return _state;
     }
 }
