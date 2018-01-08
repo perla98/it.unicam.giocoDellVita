@@ -11,7 +11,7 @@ public class Main {
 	
 	{
 		
-		_board = initBoard(1,10);
+		_board = initBoard(10,10);
 		
 		System.out.println(_board.neighboursCountAt(9, 9));
 		

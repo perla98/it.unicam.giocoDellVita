@@ -24,12 +24,12 @@ public class errDialog extends JDialog {
 	 * Create the dialog.
 	 */
 	
-	JLabel lblNewLabel = new JLabel("");
+	private JLabel lblNewLabel = new JLabel("");
 	
 	
-	public errDialog() {
+	private errDialog() {
 		setTitle("Error");
-		setBounds(100, 100, 450, 165);
+		setBounds(100, 100, 450, 152);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setLayout(new FlowLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -53,11 +53,6 @@ public class errDialog extends JDialog {
 				buttonPane.add(okButton);
 				getRootPane().setDefaultButton(okButton);
 			}
-			{
-				JButton cancelButton = new JButton("Cancel");
-				cancelButton.setActionCommand("Cancel");
-				buttonPane.add(cancelButton);
-			}
 		}
 	}
 	
@@ -65,7 +60,7 @@ public class errDialog extends JDialog {
 	
 	{
 		errDialog err = new errDialog();
-		err.lblNewLabel.setText(e.toString());
+		err.lblNewLabel.setText(e.getMessage());
 		err.setVisible(true);
 		err.show();
 	}
