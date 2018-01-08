@@ -17,10 +17,11 @@ public class Board {
     /**
      * @param height
      * @param width
-     * @param p probability that Cell is alive at start
+     * @throws Exception 
      */
 	
-	  public Board(int height, int width, double p) {
+	  public Board(int height, int width) throws Exception {
+		  if(height > 1 && width > 1) {
 	        this._height=height;
 	        this._width = width;
 	        _grid = new Cell[height][width];
@@ -28,12 +29,11 @@ public class Board {
 	        for (int h=0; h<_grid.length; h++){
 	            for (int w=0; w<_grid[h].length; w++){
 	                _grid[h][w] = new Cell();
-	                if (_random.nextDouble() <= p){
-	                    _grid[h][w].setNewState(true);
-	                    _grid[h][w].updateState();
-	                }
+	                generateState(h,w);
 	            }
 	        }
+		  }
+		  else throw new Exception("dimensioni non valide");
 	    }
 
 	    public Cell[][] getGrid() {
@@ -43,6 +43,8 @@ public class Board {
 	    public int getSize() {
 	        return _width;
 	    }
+	    
+	   
 
 	    public int neighboursCountAt(int row, int col) {
 	        int sum=0;
@@ -99,6 +101,15 @@ public class Board {
 
 	    public boolean isAlive(int row, int col) {
 	        return _grid[row][col].getState();
+	    }
+	    
+	    
+	    private void generateState(int x, int y)
+	    {
+	    	if (_random.nextDouble() <= 1){
+                _grid[x][y].setNewState(true);
+                _grid[x][y].updateState();
+            }
 	    }
 
 	    public void update() {

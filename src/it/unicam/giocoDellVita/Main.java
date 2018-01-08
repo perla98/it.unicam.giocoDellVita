@@ -1,6 +1,7 @@
 package it.unicam.giocoDellVita;
 
 import it.unicam.giocoDellVita.Class.*;
+import it.unicam.giocoDellVita.UI.*;
 
 public class Main {
 	
@@ -10,7 +11,7 @@ public class Main {
 	
 	{
 		
-		_board = new Board(10, 10, 1.6);
+		_board = initBoard(1,10);
 		
 		System.out.println(_board.neighboursCountAt(9, 9));
 		
@@ -29,6 +30,18 @@ public class Main {
 		
 	}
 	
+	static Board initBoard(int h, int w)
+	{
+		try {
+			return new Board(h,w);
+		} catch (Exception e) {
+			
+			errDialog.showError(e);
+			
+		}
+		
+		return null;
+	}
 	
 	static void printBoard()
 	{
