@@ -1,4 +1,4 @@
-package it.unicam.giocoDellVita;
+package it.unicam.giocoDellVita.Class;
 
 public class Board {
 	
@@ -45,50 +45,50 @@ public class Board {
 	        int sum=0;
 	        // Positions numbered as phone dial
 	        if (row != 0 && col != 0){    //1
-	            if(isAlive(row-1,col-1)){
+	            if(isAlive(row-1,col-1))
 	                sum++;
-	            }
+	            
 	        }
 	        
 	        if (row != 0){
-	            if(isAlive(row-1,col)){ //2
+	            if(isAlive(row-1,col)) //2
 	            sum++;
-	            }
+	            
 	        }
 	        
 	        if (row != 0 && col != _width-1){//3
-	            if(isAlive(row-1,col+1)){
+	            if(isAlive(row-1,col+1))
 	                sum++;
-	            }
+	            
 	        }
 	        if (col != 0){
-	            if(isAlive(row,col-1)){ //4
+	            if(isAlive(row,col-1)) //4
 	            sum++;
-	            }
+	            
 	        }
 	        //self
 	        if (col != _width-1){
-	            if(isAlive(row,col+1)){ //6
+	            if(isAlive(row,col+1)) //6
 	                sum++;
-	            }
+	            
 	        }
 
 	        if (row != _height-1 && col != 0){
-	            if(isAlive(row+1,col-1)){ //7
+	            if(isAlive(row+1,col-1)) //7
 	                sum++;
-	            }
+	            
 	        }
 
 	        if (row != _height-1){
-	            if(isAlive(row+1,col)){ //8
+	            if(isAlive(row+1,col)) //8
 	            sum++;
-	            }
+	            
 	        }
 
 	        if (row != _height-1 && col != _width-1){
-	            if(isAlive(row+1,col+1)){ //9
+	            if(isAlive(row+1,col+1)) //9
 	                sum++;
-	            }
+	            
 	        }
 
 	        return sum;
@@ -123,11 +123,11 @@ public class Board {
 	     * Updates Cell state based on newState
 	     */
 	    private void commit() {
-	        for (int h=0; h<_grid.length; h++){
-	            for (int w=0; w<_grid[h].length; w++){
+	        for (int h=0; h<_grid.length; h++)
+	            for (int w=0; w<_grid[h].length; w++)
 	                _grid[h][w].updateState();
-	            }
-	        }
+	            
+	        
 	    }
 
 }

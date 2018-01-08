@@ -1,4 +1,4 @@
-package it.unicam.giocoDellVita;
+package it.unicam.giocoDellVita.Class;
 
 public class Cell {
 
