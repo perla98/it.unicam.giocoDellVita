@@ -6,29 +6,49 @@ import it.unicam.giocoDellVita.UI.*;
 public class Main {
 	
 	static Board _board;
-	
+	/*
 	public static void main(String[] args) 
 	
 	{
+		_board = initBoard(1,10);
 		
-		_board = initBoard(10,10);
+		if (_board != null)
 		
-		System.out.println(_board.neighboursCountAt(9, 9));
+		{
+		
+			System.out.println(_board.neighboursCountAt(9, 9));
 		
 	
 		
-		System.out.println(_board.neighboursCountAt(3, 9));
+			System.out.println(_board.neighboursCountAt(3, 9));
 		
 		
 		
 		
-		System.out.println(_board.neighboursCountAt(6, 9));
+			System.out.println(_board.neighboursCountAt(6, 9));
 		
-		_board.update();
+			_board.update();
 		
-		printBoard();
+			printBoard();
+			
+			
+		}
+		else return;
 		
+		System.out.println("ciao");
 	}
+	*/
+	
+	public static void main(String[] args)
+			 throws java.lang.InterruptedException{
+				Life earth = new Life(55);
+				earth.drawWorld();
+				while(true){
+					Thread.sleep(200);
+					earth.nextGeneration();
+					earth.drawWorld();
+				}
+			}
 	
 	static Board initBoard(int h, int w)
 	{

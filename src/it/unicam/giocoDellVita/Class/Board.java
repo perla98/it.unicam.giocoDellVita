@@ -33,7 +33,7 @@ public class Board {
 	            }
 	        }
 		  }
-		  else throw new Exception("dimensioni non valide");
+		  else throw new Exception("Dimensioni griglia non valide");
 	    }
 
 	    public Cell[][] getGrid() {
@@ -44,7 +44,6 @@ public class Board {
 	        return _width;
 	    }
 	    
-	   
 
 	    public int neighboursCountAt(int row, int col) {
 	        int sum=0;
@@ -106,7 +105,7 @@ public class Board {
 	    
 	    private void generateState(int x, int y)
 	    {
-	    	if (_random.nextDouble() <= 1){
+	    	if (_random.nextInt(2) <= 1){
                 _grid[x][y].setNewState(true);
                 _grid[x][y].updateState();
             }
