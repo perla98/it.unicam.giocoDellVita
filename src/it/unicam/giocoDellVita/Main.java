@@ -43,11 +43,12 @@ public class Main {
 			 throws java.lang.InterruptedException{
 				Life earth = new Life(55);
 				earth.drawWorld();
-				while(true){
-					Thread.sleep(200);
+				
+				
 					earth.nextGeneration();
 					earth.drawWorld();
-				}
+				
+				
 			}
 	
 	static Board initBoard(int h, int w)
