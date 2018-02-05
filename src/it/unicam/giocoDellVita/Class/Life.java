@@ -29,16 +29,14 @@ public class Life {
 	public void drawWorld(){
 		//System.out.print("\033[H\033[2J"); // Simulates a clear screen on linux machines
 		for(int row = 0; row < world.length; row++ ){
-			for(int col = 0; col < world[row].length; col++ ){
+			for(int col = 0; col < world[row].length; col++ )
 				world[row][col]=assignType(world[row][col]);
-				System.out.print(world[row][col].getImage());
-				//System.out.print(isAlive(world[row][col]));
-				// System.out.print(isAlive(world[row][col]) ? '@' : '.');
-				 System.out.print(' ');
-			}
-			System.out.println();
+	
+
+			
+			
 		}
-		System.out.println("Generation:" + generation);
+		//System.out.println("Generation:" + generation);
 	}
 
 	// Create the next generation
@@ -92,6 +90,33 @@ public class Life {
 	
 	public void move()
 	{
+		int rdn = new Random().nextInt(dimension);
 		
+		if(rdn+1 <world[rdn].length)
+		{
+		Pedina temp1 = world[rdn][rdn];
+		Pedina temp2 = world[rdn][rdn+1];
+		
+		world[rdn][rdn+1] = temp1;
+		world[rdn][rdn] = temp2;
+				
+		}	
+		
+	}
+	
+	
+	public void print()
+	
+	{
+		for(int row = 0; row < world.length; row++ ){
+			for(int col = 0; col < world[row].length; col++ )
+				System.out.print(world[row][col].getImage());
+		//System.out.print(isAlive(world[row][col]));
+		// System.out.print(isAlive(world[row][col]) ? '@' : '.');
+			System.out.print(' ');
+			System.out.println();
+		}
+		
+		System.out.println("Generation:" + generation);
 	}
 }

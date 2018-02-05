@@ -41,12 +41,17 @@ public class Main {
 	
 	public static void main(String[] args)
 			 throws java.lang.InterruptedException{
-				Life earth = new Life(55);
+				Life earth = new Life(5);
 				earth.drawWorld();
 				
+				earth.print();
+				//	earth.nextGeneration();
+				//	earth.drawWorld();
 				
-					earth.nextGeneration();
-					earth.drawWorld();
+				earth.move();
+				
+				
+				earth.print();
 				
 				
 			}

@@ -9,7 +9,7 @@ public class Vuota extends Pedina{
 	
 	public String getImage()
 	{
-		return "vota";
+		return ".";
 	}
 	
 

@@ -18,7 +18,7 @@ public class Alimento extends Pedina{
 	
 	public String getImage()
 	{
-		return "sono un Alimento";
+		return "!";
 	}
 
 }

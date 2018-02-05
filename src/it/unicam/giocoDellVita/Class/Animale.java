@@ -25,7 +25,7 @@ public class Animale extends Pedina {
 	
 	public String getImage()
 	{
-		return "animale";
+		return "*";
 	}
 
 }
