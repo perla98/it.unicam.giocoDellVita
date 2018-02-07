@@ -71,16 +71,6 @@ public class Life {
 		
 	}
 	
-
-
-	
-	
-	private boolean isAlive(Pedina pedina)
-		{
-		
-			   
-				return	pedina.getLifeStatus();
-		}
 	
 	public void move()
 	{

@@ -6,23 +6,15 @@ public class Pedina {
 	//La posizione della pedina nella scacchiera
 	private int x;
 	private int y;
-	private boolean currentLifeStatus;
+	
 	private static Random random = new Random();
 	
 	public Pedina(int x, int y){
 		this.x=x;
 		this.y=y;
-		generateLifeStatus();
+		
 	}
-	
-	private void generateLifeStatus()
-	{
-		if(random.nextInt(2) == 1)
-		currentLifeStatus = true;
-		else
-			currentLifeStatus = false;
-	}
-	
+
 	public int getX()
 	{
 		return x;
@@ -34,10 +26,6 @@ public class Pedina {
 	{
 		return y;
 		
-	}
-	public boolean getLifeStatus()
-	{
-		return currentLifeStatus;
 	}
 	
 	public String getImage()
