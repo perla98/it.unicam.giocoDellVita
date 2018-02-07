@@ -84,7 +84,7 @@ public class Life {
 	private boolean isAlive(Pedina pedina)
 		{
 		
-			
+			   
 				return	pedina.getLifeStatus();
 		}
 	
@@ -96,14 +96,22 @@ public class Life {
 		{
 		Pedina temp1 = world[rdn][rdn];
 		Pedina temp2 = world[rdn][rdn+1];
-		
+		 
 		world[rdn][rdn+1] = temp1;
 		world[rdn][rdn] = temp2;
 				
-		}	
 		
+		updateReferences(temp1, rdn, rdn+1);
+		updateReferences(temp2, rdn, rdn);
+		}	
+		else move();
 	}
 	
+	private void updateReferences(Pedina pedina, int x, int y)
+	
+	{
+		pedina.update(x,y);
+	}
 	
 	public void print()
 	
