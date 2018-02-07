@@ -7,7 +7,7 @@ public class Pedina {
 	private int x;
 	private int y;
 	
-	private static Random random = new Random();
+	
 	
 	public Pedina(int x, int y){
 		this.x=x;
