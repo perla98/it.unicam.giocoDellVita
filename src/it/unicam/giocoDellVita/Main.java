@@ -1,7 +1,7 @@
 package it.unicam.giocoDellVita;
 
 import it.unicam.giocoDellVita.Class.*;
-import it.unicam.giocoDellVita.UI.*;
+
 
 public class Main {
 	
