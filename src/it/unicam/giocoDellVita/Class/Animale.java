@@ -19,8 +19,12 @@ public class Animale extends Pedina {
 	public void checkMovement(Pedina pedina, Pedina nextPedina)
 	{
 		if (vita > 0)
+		{
 		if (nextPedina instanceof Alimento)
+		{
 			vita++;
+			nextPedina  = new Vuota(pedina.getX(), pedina.getY());
+		}
 		else
 			vita--;
 		
@@ -37,7 +41,7 @@ public class Animale extends Pedina {
 				vita -= 10;
 				}
 		}
-		else
+		} else
 			pedina = new Vuota(pedina.getX(), pedina.getY());
 	}
 	
