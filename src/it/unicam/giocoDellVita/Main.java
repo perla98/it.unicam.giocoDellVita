@@ -41,9 +41,10 @@ public class Main {
 	
 	public static void main(String[] args)
 			 throws java.lang.InterruptedException{
-				Life earth = new Life(5);
+				Life earth = new Life(20);
 				earth.drawWorld();
-				
+				while(true)
+				{
 				earth.print();
 				//	earth.nextGeneration();
 				//	earth.drawWorld();
@@ -52,7 +53,8 @@ public class Main {
 				
 				
 				earth.print();
-				
+				Thread.sleep(300);
+				}
 				
 			}
 	

@@ -64,10 +64,13 @@ public class Life {
 	private Pedina assignType(Pedina pedina)
 	{
 		
-		int rdn = new Random().nextInt(3);
+		int rdn = new Random().nextInt(4);
 		
 	if (rdn == 2)
-		return new Animale(pedina.getX() , pedina.getY());
+		return new Animale(pedina.getX() , pedina.getY(), tipoSpecie.SPECIE2);
+	
+	if (rdn == 3)
+		return new Animale(pedina.getX() , pedina.getY(), tipoSpecie.SPECIE1);
 			
 	if (rdn == 1)
 		return new Alimento(pedina.getX() , pedina.getY());
@@ -90,6 +93,12 @@ public class Life {
 	
 	public void move()
 	{
+		moveRow();
+		moveCol();
+	}
+	
+	private void moveRow()
+	{
 		int rdn = new Random().nextInt(dimension);
 		
 		if(rdn+1 <world[rdn].length)
@@ -99,13 +108,37 @@ public class Life {
 		 
 		world[rdn][rdn+1] = temp1;
 		world[rdn][rdn] = temp2;
-				
+	
+		if (temp1 instanceof Animale)
+			((Animale) temp1).checkMovement(temp1, temp2);
 		
 		updateReferences(temp1, rdn, rdn+1);
 		updateReferences(temp2, rdn, rdn);
 		}	
-		else move();
+		else moveRow();
 	}
+	
+	private void moveCol()
+	{
+		int rdn = new Random().nextInt(dimension);
+		
+		if(rdn+1 <world.length)
+		{
+		Pedina temp1 = world[rdn][rdn];
+		Pedina temp2 = world[rdn+1][rdn];
+		 
+		world[rdn+1][rdn] = temp1;
+		world[rdn][rdn] = temp2;
+	
+		if (temp1 instanceof Animale)
+			((Animale) temp1).checkMovement(temp1, temp2);
+		
+		updateReferences(temp1, rdn+1, rdn);
+		updateReferences(temp2, rdn, rdn);
+		}	
+		else moveCol();
+	}
+	
 	
 	private void updateReferences(Pedina pedina, int x, int y)
 	
