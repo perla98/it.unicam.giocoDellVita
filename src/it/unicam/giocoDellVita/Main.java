@@ -4,10 +4,9 @@ import it.unicam.giocoDellVita.Class.*;
 
 
 public class Main {
-	Life earth;
+	static Life earth;
 	
 	public static void main(String[] args) throws java.lang.InterruptedException{
-		Life earth;
 		
 		if(args.length > 0)
 			earth = new Life(Integer.parseInt(args[0]));
@@ -22,7 +21,7 @@ public class Main {
 				
 					earth.move();
 
-					Thread.sleep(300);
+					Thread.sleep(3);
 				}
 				
 			}
