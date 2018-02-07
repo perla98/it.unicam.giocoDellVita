@@ -21,7 +21,7 @@ public class Main {
 				{
 					earth.print();
 				
-					Thread.sleep(3);
+					Thread.sleep(1);
 				}
 				
 			}
