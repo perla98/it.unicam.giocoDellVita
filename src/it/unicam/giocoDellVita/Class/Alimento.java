@@ -11,7 +11,7 @@ public class Alimento extends Pedina{
 	
 	public String getImage()
 	{
-		return caratteriSpecieli.chCibo();
+		return caratteriSpeciali.chCibo();
 	}
 
 }

@@ -9,7 +9,7 @@ public class Vuota extends Pedina{
 	
 	public String getImage()
 	{
-		return caratteriSpecieli.chVouta();
+		return caratteriSpeciali.chVouta();
 	}
 	
 

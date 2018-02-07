@@ -44,10 +44,10 @@ public class Animale extends Pedina {
 	public String getImage()
 	{
 		if (specie == tipoSpecie.SPECIE1)
-		return caratteriSpecieli.chAnimale1();
+		return caratteriSpeciali.chAnimale1();
 		
 		else
-			return caratteriSpecieli.chAnimale2();
+			return caratteriSpeciali.chAnimale2();
 	}
 	
 	

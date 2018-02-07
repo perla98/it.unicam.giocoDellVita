@@ -1,6 +1,6 @@
 	package it.unicam.giocoDellVita.Class;
 
-public final class caratteriSpecieli {
+public final class caratteriSpeciali {
 
 	
 	public static String chAnimale1()
