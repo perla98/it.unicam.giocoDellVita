@@ -16,14 +16,18 @@ public class Animale extends Pedina {
 		this.specie = specie;
 	}
 	
-	public void checkMovement(Pedina pedina, Pedina nextPedina)
+	public Pedina[] checkMovement(Pedina pedina, Pedina nextPedina)
 	{
+		Pedina[] pv = new Pedina[2];
+		pv[0] = pedina;
+		pv[1] = nextPedina;
+		
 		if (vita > 0)
 		{
 		if (nextPedina instanceof Alimento)
 		{
 			vita++;
-			nextPedina  = new Vuota(pedina.getX(), pedina.getY());
+			pv[1] = new Vuota(pedina.getX(), pedina.getY());
 		}
 		else
 			vita--;
@@ -32,18 +36,23 @@ public class Animale extends Pedina {
 		{
 			if(specie == tipoSpecie.SPECIE1)
 			if (vita >= 5 && vita <= 20)
-				nextPedina = new Vuota(pedina.getX(), pedina.getY());
+				pv[1] = new Vuota(pedina.getX(), pedina.getY());
 		
 			if (specie == tipoSpecie.SPECIE2)
 				if(vita >= 20)
 				{
-				nextPedina = new Animale(pedina.getX(), pedina.getY(), tipoSpecie.SPECIE2);
+				pv[1] = new Animale(pedina.getX(), pedina.getY(), tipoSpecie.SPECIE2);
 				vita -= 10;
 				}
 		}
 		} else
-			pedina = new Vuota(pedina.getX(), pedina.getY());
+			pv[0] = new Vuota(pedina.getX(), pedina.getY());
+		
+		return pv;
 	}
+	
+	
+	
 	
 	public String getImage()
 	{

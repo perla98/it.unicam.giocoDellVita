@@ -15,12 +15,12 @@ public class Main {
 		
 				earth.drawWorld();
 				
-				while(true)
+				earth.print();
+				
+				while(earth.move())
 				{
 					earth.print();
 				
-					earth.move();
-
 					Thread.sleep(3);
 				}
 				

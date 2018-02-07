@@ -71,11 +71,16 @@ public class Life {
 	}
 	
 	
-	public void move()
+	public boolean move()
 	{
+		if (checkGameOver())
+		{
 		moveRow();
 		moveCol();
 		generation++;
+		return true;
+		}
+		else return false;
 	}
 	
 	private void moveRow()
@@ -90,7 +95,13 @@ public class Life {
 		
 	
 		if (temp1 instanceof Animale)
-			((Animale) temp1).checkMovement(temp1, temp2);
+		{
+			Pedina pv[];
+			pv = ((Animale) temp1).checkMovement(temp1, temp2);
+			temp1 = pv[0];
+			temp2 = pv[1];
+			
+		}
 		
 		updateReferences(temp1, col, row+1);
 		updateReferences(temp2, col, row);
@@ -136,6 +147,18 @@ public class Life {
 		pedina.update(x,y);
 	}
 	
+	
+	private boolean checkGameOver()
+	{
+		for(int row = 0; row < world.length; row++ ){
+			for(int col = 0; col < world[row].length; col++ )
+				if(world[row][col] instanceof Animale )
+					return true;
+
+		}
+		return false;
+	}
+
 	public void print()
 	
 	{
