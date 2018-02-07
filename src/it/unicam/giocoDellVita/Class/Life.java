@@ -37,20 +37,6 @@ public class Life {
 	}
 
 	
-	public void nextGeneration(){
-		Pedina[][] newWorld = new Pedina[dimension][dimension];
-		for(int row = 0; row < newWorld.length; row++ ){
-			for(int col = 0; col < newWorld[row].length; col++ ){
-				newWorld[row][col] = new Pedina(row,col);
-			}
-		}
-		world = newWorld;
-		
-	}
-
-
-	
-	
 	private Pedina assignType(Pedina pedina)
 	{
 		
