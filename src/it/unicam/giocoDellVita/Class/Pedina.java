@@ -2,14 +2,6 @@ package it.unicam.giocoDellVita.Class;
 
 import java.util.Random;
 
-/**
- * 
- */
-
-/**
- * @author Alessandro
- *
- */
 public class Pedina {
 	//La posizione della pedina nella scacchiera
 	private int x;

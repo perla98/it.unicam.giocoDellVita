@@ -1,12 +1,5 @@
 package it.unicam.giocoDellVita.Class;
-/**
- * 
- */
 
-/**
- * @author Alessandro
- *
- */
 public class Animale extends Pedina {
 	private int vita = 10;
 	private tipoSpecie specie;
@@ -50,7 +43,11 @@ public class Animale extends Pedina {
 	
 	public String getImage()
 	{
-		return "*";
+		if (specie == tipoSpecie.SPECIE1)
+		return caratteriSpecieli.chAnimale1();
+		
+		else
+			return caratteriSpecieli.chAnimale2();
 	}
 	
 	

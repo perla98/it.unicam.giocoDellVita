@@ -1,12 +1,5 @@
 package it.unicam.giocoDellVita.Class;
-/**
- * 
- */
 
-/**
- * @author Alessandro
- *
- */
 public class Alimento extends Pedina{
 
 	
@@ -18,7 +11,7 @@ public class Alimento extends Pedina{
 	
 	public String getImage()
 	{
-		return "!";
+		return caratteriSpecieli.chCibo();
 	}
 
 }
