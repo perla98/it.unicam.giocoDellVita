@@ -4,11 +4,18 @@ import it.unicam.giocoDellVita.Class.*;
 
 
 public class Main {
+	Life earth;
 	
-	public static void main(String[] args)
-			 throws java.lang.InterruptedException{
-				Life earth = new Life(20);
+	public static void main(String[] args) throws java.lang.InterruptedException{
+		Life earth;
+		
+		if(args.length > 0)
+			earth = new Life(Integer.parseInt(args[0]));
+		else
+				earth = new Life(20);
+		
 				earth.drawWorld();
+				
 				while(true)
 				{
 					earth.print();
