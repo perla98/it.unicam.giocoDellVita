@@ -11,16 +11,11 @@ public class Main {
 				earth.drawWorld();
 				while(true)
 				{
-				earth.print();
-			
+					earth.print();
 				
-				earth.move();
-				
-				
-				earth.print();
-				
-				
-				Thread.sleep(300);
+					earth.move();
+
+					Thread.sleep(300);
 				}
 				
 			}
