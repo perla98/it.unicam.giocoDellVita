@@ -1,9 +1,9 @@
 package it.unicam.giocoDellVita.Class;
 
-public class Alimento extends Pedina{
+ class Alimento extends Pedina{
 
 	
-	public Alimento(int x, int y) {
+	protected Alimento(int x, int y) {
 		
 		super(x, y);
 		

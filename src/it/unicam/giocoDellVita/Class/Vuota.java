@@ -1,15 +1,15 @@
 package it.unicam.giocoDellVita.Class;
 
-public class Vuota extends Pedina{
+ class Vuota extends Pedina{
 
-	public Vuota(int x, int y) {
+	protected Vuota(int x, int y) {
 		super(x, y);
 		
 	}
 	
 	public String getImage()
 	{
-		return caratteriSpeciali.chVouta();
+		return caratteriSpeciali.chVuota();
 	}
 	
 

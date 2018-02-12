@@ -82,10 +82,8 @@ public class Life {
 			pv = ((Animale) temp1).checkMovement(temp1, temp2);
 			temp1 = pv[0];
 			temp2 = pv[1];
-
-		} 
-			
-			
+		}
+		
 		updateReferences(temp1, col, row+1);
 		updateReferences(temp2, col, row);
 		
@@ -116,9 +114,7 @@ public class Life {
 			Pedina pv[];
 			pv = ((Animale) temp1).checkMovement(temp1, temp2);
 			temp1 = pv[0];
-			temp2 = pv[1];
-			
-			
+			temp2 = pv[1];	
 		} 
 
 		updateReferences(temp1, col+1, row);

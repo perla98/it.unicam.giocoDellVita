@@ -1,6 +1,6 @@
 package it.unicam.giocoDellVita.Class;
 
-public class Animale extends Pedina {
+ class Animale extends Pedina {
 	private int vita;
 	private tipoSpecie specie;
 	
@@ -11,7 +11,7 @@ public class Animale extends Pedina {
 	 * @param vita
 	 * @param specie
 	 */
-	public Animale(int x, int y, tipoSpecie specie ){
+	protected Animale(int x, int y, tipoSpecie specie ){
 		super(x,y);
 		this.vita = 10;
 		this.specie = specie;

@@ -1,9 +1,9 @@
 	package it.unicam.giocoDellVita.Class;
 
-public final class caratteriSpeciali {
+ final class caratteriSpeciali {
 
 	
-public static String chAnimale(tipoSpecie specie)
+protected static String chAnimale(tipoSpecie specie)
 	
 	{
 		if(specie == tipoSpecie.SPECIE1)
@@ -11,14 +11,14 @@ public static String chAnimale(tipoSpecie specie)
 		else return "\u00C6";
 	}
 
-public static String chCibo()
+protected static String chCibo()
 
 	{
 		return "\u00A9";
 	}
 	
 
-public static String chVouta()
+protected static String chVuota()
 
 	{
 		return "\u00D8";
