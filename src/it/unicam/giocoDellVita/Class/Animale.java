@@ -1,7 +1,7 @@
 package it.unicam.giocoDellVita.Class;
 
 public class Animale extends Pedina {
-	private int vita = 10;
+	private int vita;
 	private tipoSpecie specie;
 	
 	/**
@@ -13,6 +13,7 @@ public class Animale extends Pedina {
 	 */
 	public Animale(int x, int y, tipoSpecie specie ){
 		super(x,y);
+		this.vita = 10;
 		this.specie = specie;
 	}
 	
@@ -23,7 +24,7 @@ public class Animale extends Pedina {
 		pv[1] = nextPedina;
 		
 		if (vita > 0)
-		{
+		{ 
 		if (nextPedina instanceof Alimento)
 		{
 			vita++;
@@ -46,7 +47,7 @@ public class Animale extends Pedina {
 				}
 		}
 		} else
-			pv[0] = new Vuota(pedina.getX(), pedina.getY());
+			pv[0] = new Vuota(pedina.getX(), pedina.getY()); 
 		
 		return pv;
 	}
@@ -56,11 +57,8 @@ public class Animale extends Pedina {
 	
 	public String getImage()
 	{
-		if (specie == tipoSpecie.SPECIE1)
-		return caratteriSpeciali.chAnimale1();
-		
-		else
-			return caratteriSpeciali.chAnimale2();
+	
+		return caratteriSpeciali.chAnimale(specie);
 	}
 	
 	

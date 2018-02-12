@@ -3,12 +3,14 @@ package it.unicam.giocoDellVita.Class;
 import java.util.Random;
 
 public class Life {
-	private int dimension;
+	
 	private Pedina[][] world;
+	private int dimension;
 	private long generation ;
 	private Random random = new Random();
 	
-	public Life(int dimension){
+	public Life(int dimension) throws Exception{
+		if (dimension < 2) throw new Exception("Invalid size");
 		this.dimension = dimension;
 		createNewWorld();
 		this.generation = 0;
@@ -17,11 +19,6 @@ public class Life {
 
 	private void createNewWorld(){
 		Pedina[][] newWorld = new Pedina[dimension][dimension];
-		for(int row = 0; row < newWorld.length; row++ ){
-			for(int col = 0; col < newWorld[row].length; col++ ){
-				newWorld[row][col] = new Pedina(row, col);
-			}
-		}
 		world = newWorld;
 	}
 
@@ -30,29 +27,28 @@ public class Life {
 		
 		for(int row = 0; row < world.length; row++ ){
 			for(int col = 0; col < world[row].length; col++ )
-				world[row][col]=assignType(world[row][col]);
-
+				world[row][col]=assignType(row, col);
 		}
 		
 	}
 
 	
-	private Pedina assignType(Pedina pedina)
+	private Pedina assignType(int x, int y)
 	{
 		
 		int rdn = random.nextInt(4);
 		
 	if (rdn == 2)
-		return new Animale(pedina.getX() , pedina.getY(), tipoSpecie.SPECIE2);
+		return new Animale(x , y, tipoSpecie.SPECIE2);
 	
 	if (rdn == 3)
-		return new Animale(pedina.getX() , pedina.getY(), tipoSpecie.SPECIE1);
+		return new Animale(x , y, tipoSpecie.SPECIE1);
 			
 	if (rdn == 1)
-		return new Alimento(pedina.getX() , pedina.getY());
+		return new Alimento(x , y);
 		
 	
-		return new Vuota(pedina.getX() , pedina.getY());
+		return new Vuota(x , y);
 		
 	}
 	
@@ -86,15 +82,17 @@ public class Life {
 			pv = ((Animale) temp1).checkMovement(temp1, temp2);
 			temp1 = pv[0];
 			temp2 = pv[1];
+
+		} 
 			
-		}
-		
+			
 		updateReferences(temp1, col, row+1);
 		updateReferences(temp2, col, row);
 		
 	
 		world[col][row+1] = temp1;
 		world[col][row] = temp2;
+		
 		}	
 		else moveRow();
 		
@@ -114,14 +112,22 @@ public class Life {
 		
 	
 		if (temp1 instanceof Animale)
-			((Animale) temp1).checkMovement(temp1, temp2);
-		
+		{
+			Pedina pv[];
+			pv = ((Animale) temp1).checkMovement(temp1, temp2);
+			temp1 = pv[0];
+			temp2 = pv[1];
+			
+			
+		} 
+
 		updateReferences(temp1, col+1, row);
 		updateReferences(temp2, col, row);
 		
 		
 		world[col+1][row] = temp1;
 		world[col][row] = temp2;
+		
 		}	
 		else moveCol();
 	}

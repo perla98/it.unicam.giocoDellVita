@@ -1,7 +1,7 @@
 package it.unicam.giocoDellVita.Class;
 
 
-public class Pedina {
+public abstract class Pedina {
 	//La posizione della pedina nella scacchiera
 	private int x;
 	private int y;

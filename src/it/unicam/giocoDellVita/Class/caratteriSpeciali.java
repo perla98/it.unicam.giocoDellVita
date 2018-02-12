@@ -3,18 +3,13 @@
 public final class caratteriSpeciali {
 
 	
-	public static String chAnimale1()
+public static String chAnimale(tipoSpecie specie)
 	
 	{
-		return "\u00A3";
+		if(specie == tipoSpecie.SPECIE1)
+			return "\u00A3";
+		else return "\u00C6";
 	}
-	
-public static String chAnimale2()
-	
-	{
-		return "\u00C6";
-	}
-	
 
 public static String chCibo()
 
