@@ -9,7 +9,7 @@ Sovrascrittura di metodi 3
 Eccezioni 1
            public   protected   private 
 Funzioni     6          3          1
-Metodi       6          0          5
+Metodi       6          0          4
 Enumeratori  1			0	       0
 
                  classi  attributi  metodi
