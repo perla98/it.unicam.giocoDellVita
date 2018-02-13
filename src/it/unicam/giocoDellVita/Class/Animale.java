@@ -8,7 +8,6 @@ package it.unicam.giocoDellVita.Class;
 	 * Costruttore per la creazione di un animale
 	 * @param x
 	 * @param y
-	 * @param vita
 	 * @param specie
 	 */
 	protected Animale(int x, int y, tipoSpecie specie ){
@@ -52,16 +51,11 @@ package it.unicam.giocoDellVita.Class;
 		return pv;
 	}
 	
-	
-	
-	
+
 	public String getImage()
 	{
 	
 		return caratteriSpeciali.chAnimale(specie);
 	}
-	
-	
-	
 
 }

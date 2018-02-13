@@ -9,17 +9,15 @@ public class Life {
 	private long generation ;
 	private Random random = new Random();
 	
+	/**
+	 * Costruttore per la creazione di Life
+	 * @param dimensioni
+	 */
 	public Life(int dimension) throws Exception{
 		if (dimension < 2) throw new Exception("Invalid size");
 		this.dimension = dimension;
-		createNewWorld();
+		this.world = new Pedina[dimension][dimension];
 		this.generation = 0;
-		
-	}
-
-	private void createNewWorld(){
-		Pedina[][] newWorld = new Pedina[dimension][dimension];
-		world = newWorld;
 	}
 
 	
